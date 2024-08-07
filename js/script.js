@@ -53,18 +53,15 @@ const alunos = [
     {"id":3 ,"nome": "Gustavo"}
 ];
 
-
 const notas = [
     {"id":1 ,"nota":6},
     {"id":2 ,"nota":5},
     {"id":3 ,"nota":8}
 ];
 
-const alunoComNota = alunos.map((aluno)=>{
-
-    const nota = notas.find((nota) => nota.id = aluno.id );
-    return {...aluno, nota:nota ? nota.nota : null};
-
+const alunoComNota = alunos.map((aluno, index) => {
+    const notaAluno = notas[index];
+    return {...aluno, nota: notaAluno ? notaAluno.nota : null};
 });
 
 console.log(alunoComNota);
